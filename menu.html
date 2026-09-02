@@ -1,0 +1,2357 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Menu Card | Saha Restaurant| সম্পূর্ণ মেনু</title>
+    
+    <!-- Meta Descriptions & SEO -->
+    <meta name="description" content="Explore the full digital menu of Saha Restaurant. Bengali Thalis, Snacks, Tea, Coffee, Extras & Direct WhatsApp Ordering.">
+    <meta name="theme-color" content="#c9a24b">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Style -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Specific Styles for Compact Full Menu Page (LIGHT THEME) */
+        .full-menu-page {
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        /* Sticky Top Header Container */
+        .sticky-menu-top-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1.5px solid var(--glass-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .full-menu-nav {
+            padding: 8px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .full-menu-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-dark);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 5px 14px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.84rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-back-btn:hover {
+            background: var(--accent-gold);
+            color: #ffffff;
+            border-color: var(--accent-gold);
+            transform: translateX(-3px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .full-menu-logo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .full-menu-logo-title span {
+            color: var(--accent-gold);
+        }
+
+        .full-menu-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-timing-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-dark);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 5px 12px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-timing-btn:hover {
+            background: var(--accent-gold);
+            color: #ffffff;
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+            color: #ffffff;
+            padding: 5px 14px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Full Menu Hero Header */
+        .full-menu-hero {
+            text-align: center;
+            padding: 14px 20px 10px;
+            position: relative;
+        }
+
+        .full-menu-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.35rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            line-height: 1.25;
+            letter-spacing: 0.5px;
+        }
+
+        .full-menu-hero h1 .bengali-heading {
+            color: var(--accent-gold);
+            display: inline-block;
+            font-size: 1.85rem;
+            margin-left: 14px;
+            font-family: 'Tiro Bangla', serif;
+            font-weight: 700;
+        }
+
+        .full-menu-hero p {
+            display: none;
+        }
+
+        /* Search & Filter Controls */
+        .menu-control-bar {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 10px 20px 15px;
+        }
+
+        .search-box-wrapper {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .search-box-wrapper input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1.5px solid var(--glass-border);
+            padding: 12px 20px 12px 48px;
+            border-radius: 30px;
+            color: var(--text-primary);
+            font-size: 0.98rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-box-wrapper input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+            background: var(--bg-card);
+        }
+
+        .search-box-wrapper i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .menu-category-tabs {
+            touch-action: pan-x pan-y;
+            overscroll-behavior-x: contain;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .menu-tab-btn {
+            background: var(--bg-card);
+            border: 1.5px solid var(--glass-border);
+            color: var(--text-secondary);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .menu-tab-btn i {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-tab-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--text-primary);
+            background: var(--bg-card2, #f4f8f9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+            border-color: var(--accent-gold);
+            color: #ffffff;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .menu-tab-btn.active i {
+            color: #ffffff;
+        }
+
+        /* Compact Grid for Full Menu */
+        .compact-menu-grid-container {
+            max-width: 1200px;
+            margin: 20px auto 50px;
+            padding: 0 15px;
+        }
+
+        .compact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .compact-grid .food-menu-card {
+            flex: initial;
+            width: 100%;
+            animation: floatMenuItem 4.5s ease-in-out infinite alternate;
+        }
+
+        .compact-grid .food-menu-card.hidden {
+            display: none !important;
+        }
+
+        /* No Results Message */
+        #no-results-msg {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            display: none;
+            grid-column: 1 / -1;
+        }
+
+        /* Order Info Banner (Light Theme) */
+        .order-info-banner {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 28px 36px;
+            border-radius: 20px;
+            background: var(--bg-card);
+            border: 1.5px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .order-timing-card {
+            display: flex;
+            gap: 20px;
+            flex: 1.3;
+        }
+
+        .timing-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--bg-dark);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .timing-details h4 {
+            color: var(--text-primary);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .timing-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .timing-details li {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+        }
+
+        .timing-details li strong {
+            color: var(--text-primary);
+        }
+
+        .timing-details .serve-time {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .order-call-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--bg-dark);
+            padding: 20px 24px;
+            border-radius: 14px;
+            border: 1px dashed var(--glass-border);
+        }
+
+        .call-badge {
+            background: var(--bg-card);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-bottom: 6px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .order-call-box h3 {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .order-phone-link {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .order-phone-link:hover {
+            transform: scale(1.05);
+        }
+
+        .quick-action-btns {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .direct-call-btn, .direct-wp-btn {
+            flex: 1;
+            padding: 9px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .direct-call-btn {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+            color: #ffffff;
+        }
+
+        .direct-call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .direct-wp-btn {
+            background: #25D366;
+            color: #ffffff;
+        }
+
+        .direct-wp-btn:hover {
+            background: #1ebc59;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Floating Order Quick Dial */
+        .floating-order-btn {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulseOrderBtn 2.5s infinite;
+        }
+
+        .floating-order-btn:hover {
+            background: #1ebc59;
+            color: #ffffff;
+            transform: scale(1.06);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulseOrderBtn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @media (max-width: 900px) {
+            .order-info-banner {
+                flex-direction: column;
+                padding: 22px;
+            }
+            .order-timing-card {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .full-menu-nav {
+                padding: 8px 12px;
+            }
+            .nav-back-btn span {
+                display: none;
+            }
+            .full-menu-logo-title {
+                font-size: 1.05rem;
+            }
+            .nav-timing-btn {
+                padding: 4px 8px;
+                font-size: 0.76rem;
+            }
+            .nav-timing-btn span {
+                display: none;
+            }
+            .nav-call-btn {
+                padding: 4px 10px;
+                font-size: 0.76rem;
+            }
+            .full-menu-hero {
+                padding: 10px 10px 4px;
+            }
+            .full-menu-hero h1 {
+                font-size: 1.65rem;
+            }
+            .full-menu-hero h1 .bengali-heading {
+                font-size: 1.35rem;
+                display: block;
+                margin-left: 0;
+                margin-top: 4px;
+            }
+            .menu-control-bar {
+                padding: 6px 12px 10px;
+            }
+            .search-box-wrapper {
+                margin-bottom: 8px;
+            }
+            .search-box-wrapper input {
+                padding: 9px 16px 9px 38px;
+                font-size: 0.88rem;
+                border-radius: 25px;
+            }
+            .search-box-wrapper i {
+                left: 14px;
+                font-size: 0.95rem;
+            }
+            .menu-category-tabs {
+            touch-action: pan-x pan-y;
+            overscroll-behavior-x: contain;
+                gap: 6px;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-bottom: 4px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .menu-tab-btn {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+                border-radius: 20px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .compact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .compact-grid .food-menu-card {
+                padding: 8px;
+            }
+            .food-title {
+                font-size: 0.86rem;
+            }
+            .bengali-title {
+                font-size: 0.72rem;
+            }
+            .food-price {
+                font-size: 0.95rem;
+            }
+            .food-order-btn {
+                padding: 5px 8px;
+                font-size: 0.72rem;
+            }
+        }
+    </style>
+</head>
+<body class="full-menu-page">
+
+    <!-- Sticky Top Header (Navbar + Hero Title + Search Box + Filter Tabs) -->
+    <div class="sticky-menu-top-container">
+        <!-- Top Navigation Bar -->
+        <nav class="full-menu-nav">
+            <div class="full-menu-nav-left">
+                <a href="index.html" class="nav-back-btn" title="Go back to Home Page">
+                    <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+                </a>
+                <div class="full-menu-logo-title">Saha Restaurant</div>
+            </div>
+            <div class="full-menu-nav-right">
+                <a href="#order-timings" class="nav-timing-btn" id="nav-timing-toggle-btn" title="Order Timings (অর্ডার সময়সূচী)">
+                    <i class="fas fa-clock" id="nav-timing-icon"></i> <span id="nav-timing-text">Timings</span>
+                </a>
+                <a href="tel:919933425270" class="nav-call-btn">
+                    <i class="fas fa-phone-alt"></i> <span>919933425270</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Header -->
+        <header class="full-menu-hero">
+            <h1>Complete Menu Card <span class="bengali-heading">আমাদের সম্পূর্ণ ডিজিটাল মেনু</span></h1>
+        </header>
+
+        <!-- Search Bar & Category Filter Tabs -->
+        <div class="menu-control-bar">
+            <div class="search-box-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="menu-search-input" placeholder="খাবারের নাম লিখে খুঁজুন (Search dishes...)" autocomplete="off">
+            </div>
+
+            <div class="menu-category-tabs">
+            <button class="menu-tab-btn active" data-category="all">
+                <i class="fas fa-utensils"></i> All Items
+            </button>
+            <button class="menu-tab-btn" data-category="pizza">
+                <i class="fas fa-pizza-slice"></i> Pizza
+            </button>
+            <button class="menu-tab-btn" data-category="thali">
+                <i class="fas fa-bowl-rice"></i> Thali
+            </button>
+            <button class="menu-tab-btn" data-category="dosa">
+                <i class="fas fa-stroopwafel"></i> Dosa
+            </button>
+            <button class="menu-tab-btn" data-category="rice_biriyani">
+                <i class="fas fa-drumstick-bite"></i> Biriyani & Rice
+            </button>
+            <button class="menu-tab-btn" data-category="burger_sandwich">
+                <i class="fas fa-burger"></i> Burger & Sandwich
+            </button>
+            <button class="menu-tab-btn" data-category="snacks">
+                <i class="fas fa-fish"></i> Starters & Snacks
+            </button>
+            <button class="menu-tab-btn" data-category="roti_curry">
+                <i class="fas fa-plate-wheat"></i> Roti & Curries
+            </button>
+            <button class="menu-tab-btn" data-category="beverages">
+                <i class="fas fa-mug-hot"></i> Coffee, Lassi & Drinks
+            </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compact Full Menu Grid -->
+    <main class="compact-menu-grid-container">
+        <div class="compact-grid" id="full-menu-grid">
+            <!-- 1. Chicken Break Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="chicken break pizza non veg cheese pizza">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_break_pizza.webp" alt="Chicken Break Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Break Pizza</h3>
+                    <span class="bengali-title">চিকেন ব্রেক পিজ্জা</span>
+                    <span class="food-price">₹200</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Break%20Pizza%20(%E2%82%B9200)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 2. Chicken Supreme Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="chicken supreme pizza non veg cheese">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_supreme_pizza.webp" alt="Chicken Supreme Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Supreme Pizza</h3>
+                    <span class="bengali-title">চিকেন সুপ্রিম পিজ্জা</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Supreme%20Pizza%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 3. Chicken Sausage Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="chicken sausage pizza non veg">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_sausage_pizza.webp" alt="Chicken Sausage Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Sausage Pizza</h3>
+                    <span class="bengali-title">চিকেন সসেজ পিজ্জা</span>
+                    <span class="food-price">₹160</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Sausage%20Pizza%20(%E2%82%B9160)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 4. Chicken Tikka Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="chicken tikka pizza spicy non veg">
+                <div class="food-card-badge chef">Chef Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_tikka_pizza.webp" alt="Chicken Tikka Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Tikka Pizza</h3>
+                    <span class="bengali-title">চিকেন টিক্কা পিজ্জা</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Tikka%20Pizza%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 5. Barbeque Chicken Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="bbq barbeque chicken pizza">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_barbeque_chicken_pizza.webp" alt="Barbeque Chicken Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Barbeque Chicken Pizza</h3>
+                    <span class="bengali-title">বারবিকিউ চিকেন পিজ্জা</span>
+                    <span class="food-price">₹170</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Barbeque%20Chicken%20Pizza%20(%E2%82%B9170)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 6. Smoked Chicken Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="smoked chicken pizza">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_smoked_chicken_pizza.webp" alt="Smoked Chicken Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Smoked Chicken Pizza</h3>
+                    <span class="bengali-title">স্মোকড চিকেন পিজ্জা</span>
+                    <span class="food-price">₹170</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Smoked%20Chicken%20Pizza%20(%E2%82%B9170)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 7. Hot Peri Peri Chicken Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="hot peri peri chicken pizza spicy">
+                <div class="food-card-badge special">Spicy</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_peri_peri_chicken_pizza.webp" alt="Hot Peri Peri Chicken Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Hot Peri Peri Chicken Pizza</h3>
+                    <span class="bengali-title">হট পেরি পেরি চিকেন পিজ্জা</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Hot%20Peri%20Peri%20Chicken%20Pizza%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 8. Classic Margarita Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="classic margarita pizza cheese tomato veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_classic_margarita_pizza.webp" alt="Classic Margarita Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Classic Margarita Pizza</h3>
+                    <span class="bengali-title">ক্লাসিক মার্গারিটা পিজ্জা</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Classic%20Margarita%20Pizza%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 9. Double Cheese Margarita Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="double cheese classic margarita pizza veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_double_cheese_margarita.webp" alt="Double Cheese Margarita Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Double Cheese Margarita Pizza</h3>
+                    <span class="bengali-title">ডাবল চিজ মার্গারিটা পিজ্জা</span>
+                    <span class="food-price">₹170</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Double%20Cheese%20Margarita%20Pizza%20(%E2%82%B9170)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 10. Paneer Tikka Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="paneer tikka pizza cottage cheese veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_paneer_tikka_pizza.webp" alt="Paneer Tikka Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Tikka Pizza</h3>
+                    <span class="bengali-title">পনির টিক্কা পিজ্জা</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Paneer%20Tikka%20Pizza%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 11. Fairy Paneer Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="fairy paneer pizza veg special">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_fairy_paneer_pizza.webp" alt="Fairy Paneer Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fairy Paneer Pizza</h3>
+                    <span class="bengali-title">ফেয়ারি পনির পিজ্জা</span>
+                    <span class="food-price">₹190</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Fairy%20Paneer%20Pizza%20(%E2%82%B9190)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 12. Mushroom Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="mushroom pizza mashroom veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mushroom_pizza.webp" alt="Mushroom Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mushroom Pizza</h3>
+                    <span class="bengali-title">মাশরুম পিজ্জা</span>
+                    <span class="food-price">₹160</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mushroom%20Pizza%20(%E2%82%B9160)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 13. Nature's Own Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="naturs own pizza fresh vegetables veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_natures_own_pizza.webp" alt="Nature's Own Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Nature's Own Pizza</h3>
+                    <span class="bengali-title">নেচারস ওন পিজ্জা</span>
+                    <span class="food-price">₹160</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Nature's%20Own%20Pizza%20(%E2%82%B9160)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 14. Veggie Deluxe Pizza -->
+            <div class="food-menu-card" data-category="pizza" data-keywords="veggie deluxe pizza capsicum onion corn veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_veggie_deluxe_pizza.webp" alt="Veggie Deluxe Pizza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veggie Deluxe Pizza</h3>
+                    <span class="bengali-title">ভেজি ডিলাক্স পিজ্জা</span>
+                    <span class="food-price">₹170</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Veggie%20Deluxe%20Pizza%20(%E2%82%B9170)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 15. Chicken Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="chicken thali murgi murgir mangsho rice dal sabji thali">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_thali.webp" alt="Chicken Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Thali</h3>
+                    <span class="bengali-title">চিকেন থালি</span>
+                    <span class="food-price">₹100</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Thali%20(%E2%82%B9100)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 16. Mutton Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="mutton thali khasi mangsho rice dal thali">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mutton_thali.webp" alt="Mutton Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Thali</h3>
+                    <span class="bengali-title">মটন থালি</span>
+                    <span class="food-price">₹160</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mutton%20Thali%20(%E2%82%B9160)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 17. Fish Thali (Rui) -->
+            <div class="food-menu-card" data-category="thali" data-keywords="fish thali rui macher thali mach jhol rice dal">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_fish_thali_rui.webp" alt="Fish Thali (Rui)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Thali (Rui)</h3>
+                    <span class="bengali-title">রুই মাছের থালি</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Fish%20Thali%20(Rui)%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 18. Fish Thali (Katla) -->
+            <div class="food-menu-card" data-category="thali" data-keywords="fish thali katla macher thali bhat dal">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_fish_thali_katla.webp" alt="Fish Thali (Katla)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Thali (Katla)</h3>
+                    <span class="bengali-title">কাতলা মাছের থালি</span>
+                    <span class="food-price">₹120</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Fish%20Thali%20(Katla)%20(%E2%82%B9120)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 19. Egg Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="egg thali dimer thali dim kosha rice dal">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_egg_thali.webp" alt="Egg Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Thali</h3>
+                    <span class="bengali-title">ডিম থালি</span>
+                    <span class="food-price">₹70</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Egg%20Thali%20(%E2%82%B970)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 20. Veg Thali -->
+            <div class="food-menu-card" data-category="thali" data-keywords="veg thali niramish thali dal sabji rice">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_veg_thali.webp" alt="Veg Thali" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veg Thali</h3>
+                    <span class="bengali-title">ভেজ থালি</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Veg%20Thali%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 21. Rui Kari (1 pc) -->
+            <div class="food-menu-card" data-category="thali" data-keywords="rui kari 1 pice mach curry">
+                <div class="food-card-badge special">Side Dish</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_rui_kari.webp" alt="Rui Kari (1 pc)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Rui Kari (1 pc)</h3>
+                    <span class="bengali-title">রুই কারি (১ পিস)</span>
+                    <span class="food-price">₹30</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Rui%20Kari%20(1%20pc)%20(%E2%82%B930)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 22. Katla Kari (1 pc) -->
+            <div class="food-menu-card" data-category="thali" data-keywords="katla kari 1 pice mach curry">
+                <div class="food-card-badge special">Side Dish</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_katla_kari.webp" alt="Katla Kari (1 pc)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Katla Kari (1 pc)</h3>
+                    <span class="bengali-title">কাতলা কারি (১ পিস)</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Katla%20Kari%20(1%20pc)%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 23. Egg Kari (2 pcs) -->
+            <div class="food-menu-card" data-category="thali" data-keywords="egg kari 2 pice dim curry">
+                <div class="food-card-badge popular">Side Dish</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_egg_kari.webp" alt="Egg Kari (2 pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Kari (2 pcs)</h3>
+                    <span class="bengali-title">ডিম কারি (২ পিস)</span>
+                    <span class="food-price">₹40</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Egg%20Kari%20(2%20pcs)%20(%E2%82%B940)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 24. Saha Special Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="saha special dosa south indian crispy">
+                <div class="food-card-badge chef">Chef Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_saha_special_dosa.webp" alt="Saha Special Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Saha Special Dosa</h3>
+                    <span class="bengali-title">সাহা স্পেশাল দোসা</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Saha%20Special%20Dosa%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 25. Family Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="family dosa big size south indian">
+                <div class="food-card-badge special">Family Size</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_family_dosa.webp" alt="Family Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Family Dosa</h3>
+                    <span class="bengali-title">ফ্যামিলি দোসা</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Family%20Dosa%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 26. Masala Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="masala dosa aloo masala sambar chutney">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_masala_dosa.webp" alt="Masala Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Masala Dosa</h3>
+                    <span class="bengali-title">মশলা দোসা</span>
+                    <span class="food-price">₹50</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Masala%20Dosa%20(%E2%82%B950)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 27. Cheese Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="cheese dosa melting cheese">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_cheese_dosa.webp" alt="Cheese Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Cheese Dosa</h3>
+                    <span class="bengali-title">চিজ দোসা</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Cheese%20Dosa%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 28. Butter Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="butter dosa amul butter">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_butter_dosa.webp" alt="Butter Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Butter Dosa</h3>
+                    <span class="bengali-title">বাটার দোসা</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Butter%20Dosa%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 29. Onion Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="onion dosa pyaz dosa">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_onion_dosa.webp" alt="Onion Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Onion Dosa</h3>
+                    <span class="bengali-title">অনিয়ন দোসা</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Onion%20Dosa%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 30. Set Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="set dosa soft spongy">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_set_dosa.webp" alt="Set Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Set Dosa</h3>
+                    <span class="bengali-title">সেট দোসা</span>
+                    <span class="food-price">₹100</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Set%20Dosa%20(%E2%82%B9100)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 31. Chinese Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="chinese dosa noodles schezwan">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chinese_dosa.webp" alt="Chinese Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chinese Dosa</h3>
+                    <span class="bengali-title">চাইনিজ দোসা</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chinese%20Dosa%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 32. Egg Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="egg dosa non veg dosa">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_egg_dosa.webp" alt="Egg Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Dosa</h3>
+                    <span class="bengali-title">এগ দোসা</span>
+                    <span class="food-price">₹70</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Egg%20Dosa%20(%E2%82%B970)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 33. Plain Dosa -->
+            <div class="food-menu-card" data-category="dosa" data-keywords="plain dosa crispy sambar chutney">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_plain_dosa.webp" alt="Plain Dosa" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Plain Dosa</h3>
+                    <span class="bengali-title">প্লেন দোসা</span>
+                    <span class="food-price">₹40</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Plain%20Dosa%20(%E2%82%B940)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 34. Chicken Biriyani -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="chicken biriyani biryani chicken leg egg aloo">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_biriyani.webp" alt="Chicken Biriyani" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Biriyani</h3>
+                    <span class="bengali-title">চিকেন বিরিয়ানি</span>
+                    <span class="food-price">₹135</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Biriyani%20(%E2%82%B9135)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 35. Mutton Biriyani -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="mutton biriyani biryani mutton khasi egg aloo">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mutton_biriyani.webp" alt="Mutton Biriyani" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Biriyani</h3>
+                    <span class="bengali-title">মটন বিরিয়ানি</span>
+                    <span class="food-price">₹170</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mutton%20Biriyani%20(%E2%82%B9170)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 36. Potato Biriyani -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="poteto potato aloo biriyani veg">
+                <div class="food-card-badge pure-veg">Veg Favorite</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_potato_biriyani.webp" alt="Potato Biriyani" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Potato Biriyani</h3>
+                    <span class="bengali-title">আলু বিরিয়ানি</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Potato%20Biriyani%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 37. Badshahi Pulao -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="badshahi pulao sweet rich dry fruits">
+                <div class="food-card-badge chef">Royal Dish</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_badshahi_pulao.webp" alt="Badshahi Pulao" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Badshahi Pulao</h3>
+                    <span class="bengali-title">বাদশাহী পোলাও</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Badshahi%20Pulao%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 38. Chicken Fried Rice -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="chicken fried rice chinese rice">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_fried_rice.webp" alt="Chicken Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Fried Rice</h3>
+                    <span class="bengali-title">চিকেন ফ্রাইড রাইস</span>
+                    <span class="food-price">₹120</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Fried%20Rice%20(%E2%82%B9120)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 39. Mutton Fried Rice -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="mutton friend fried rice non veg">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mutton_fried_rice.webp" alt="Mutton Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Fried Rice</h3>
+                    <span class="bengali-title">মটন ফ্রাইড রাইস</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mutton%20Fried%20Rice%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 40. Mixed Fried Rice -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="mixed friend fried rice chicken egg prawn">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mixed_fried_rice.webp" alt="Mixed Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mixed Fried Rice</h3>
+                    <span class="bengali-title">মিক্সড ফ্রাইড রাইস</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mixed%20Fried%20Rice%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 41. Veg Fried Rice -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="veg fried rice vegetables chinese">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_veg_fried_rice.webp" alt="Veg Fried Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veg Fried Rice</h3>
+                    <span class="bengali-title">ভেজ ফ্রাইড রাইস</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Veg%20Fried%20Rice%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 42. Jira Rice -->
+            <div class="food-menu-card" data-category="rice_biriyani" data-keywords="jira rice jeera rice cumin basmati">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_jira_rice.webp" alt="Jira Rice" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Jira Rice</h3>
+                    <span class="bengali-title">জিরা রাইস</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Jira%20Rice%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 43. Triple Decker Chicken Burger -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="tripple deeker chi burger chicken burger">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_triple_decker_chicken_burger.webp" alt="Triple Decker Chicken Burger" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Triple Decker Chicken Burger</h3>
+                    <span class="bengali-title">ট্রিপল ডেকার চিকেন বার্গার</span>
+                    <span class="food-price">₹100</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Triple%20Decker%20Chicken%20Burger%20(%E2%82%B9100)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 44. Chicken Tikka Burger -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="chicken tikka burger spicy">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_tikka_burger.webp" alt="Chicken Tikka Burger" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Tikka Burger</h3>
+                    <span class="bengali-title">চিকেন টিক্কা বার্গার</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Tikka%20Burger%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 45. Grilled Chicken Burger -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="grilled chicken burger juicy">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_grilled_chicken_burger.webp" alt="Grilled Chicken Burger" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Grilled Chicken Burger</h3>
+                    <span class="bengali-title">গ্রিল্ড চিকেন বার্গার</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Grilled%20Chicken%20Burger%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 46. Barbecue Chicken Burger -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="barbecue chicken burger bbq">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_barbecue_chicken_burger.webp" alt="Barbecue Chicken Burger" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Barbecue Chicken Burger</h3>
+                    <span class="bengali-title">বারবিকিউ চিকেন বার্গার</span>
+                    <span class="food-price">₹70</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Barbecue%20Chicken%20Burger%20(%E2%82%B970)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 47. Egg Burger -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="egg burger dim burger">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_egg_burger.webp" alt="Egg Burger" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Burger</h3>
+                    <span class="bengali-title">এগ বার্গার</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Egg%20Burger%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 48. Veggie Delight Burger -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="vaggie veggie delight burger veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_veggie_delight_burger.webp" alt="Veggie Delight Burger" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veggie Delight Burger</h3>
+                    <span class="bengali-title">ভেজি ডিলাইট বার্গার</span>
+                    <span class="food-price">₹70</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Veggie%20Delight%20Burger%20(%E2%82%B970)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 49. Chicken & Egg Sandwich -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="chicken and egg sandwich sendwich">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_egg_sandwich.webp" alt="Chicken & Egg Sandwich" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken & Egg Sandwich</h3>
+                    <span class="bengali-title">চিকেন অ্যান্ড এগ স্যান্ডউইচ</span>
+                    <span class="food-price">₹100</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20%26%20Egg%20Sandwich%20(%E2%82%B9100)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 50. Barbecue Chicken Sandwich -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="barbecue chicken sandwich bbq">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_barbecue_chicken_sandwich.webp" alt="Barbecue Chicken Sandwich" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Barbecue Chicken Sandwich</h3>
+                    <span class="bengali-title">বারবিকিউ চিকেন স্যান্ডউইচ</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Barbecue%20Chicken%20Sandwich%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 51. Grilled Chicken Sandwich -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="grilled chicken sandwich toast">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_grilled_chicken_sandwich.webp" alt="Grilled Chicken Sandwich" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Grilled Chicken Sandwich</h3>
+                    <span class="bengali-title">গ্রিল্ড চিকেন স্যান্ডউইচ</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Grilled%20Chicken%20Sandwich%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 52. Chicken Tikka Sandwich -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="chicken tikka sandwich">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_tikka_sandwich.webp" alt="Chicken Tikka Sandwich" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Tikka Sandwich</h3>
+                    <span class="bengali-title">চিকেন টিক্কা স্যান্ডউইচ</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Tikka%20Sandwich%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 53. Paneer Tikka Sandwich -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="paneer tikka sandwich cottage cheese veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_paneer_tikka_sandwich.webp" alt="Paneer Tikka Sandwich" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Tikka Sandwich</h3>
+                    <span class="bengali-title">পনির টিক্কা স্যান্ডউইচ</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Paneer%20Tikka%20Sandwich%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 54. Veg Mayonnaise Sandwich -->
+            <div class="food-menu-card" data-category="burger_sandwich" data-keywords="veg mayonnaise sendwich veg sandwich">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_veg_mayonnaise_sandwich.webp" alt="Veg Mayonnaise Sandwich" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veg Mayonnaise Sandwich</h3>
+                    <span class="bengali-title">ভেজ মেয়োনিজ স্যান্ডউইচ</span>
+                    <span class="food-price">₹65</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Veg%20Mayonnaise%20Sandwich%20(%E2%82%B965)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 55. Fish Fry -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="fish fry kolkata bhetki mach fry kasundi">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_fish_fry.webp" alt="Fish Fry" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Fry</h3>
+                    <span class="bengali-title">কলকাতা ফিশ ফ্রাই</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Fish%20Fry%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 56. Fish Finger -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="fish finger crispy fish snacks">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_fish_finger.webp" alt="Fish Finger" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Fish Finger</h3>
+                    <span class="bengali-title">ফিশ ফিঙ্গার</span>
+                    <span class="food-price">₹120</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Fish%20Finger%20(%E2%82%B9120)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 57. Chicken Lollipop -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken lolipop lollipop fried chicken">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_lollipop.webp" alt="Chicken Lollipop" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Lollipop</h3>
+                    <span class="bengali-title">চিকেন ললিপপ</span>
+                    <span class="food-price">₹120</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Lollipop%20(%E2%82%B9120)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 58. Chicken 65 -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken 65 spicy south style">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_65.webp" alt="Chicken 65" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken 65</h3>
+                    <span class="bengali-title">চিকেন ৬৫</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%2065%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 59. Crispy Sweet Chicken -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="crispy sweet chicken chinese starter">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_crispy_sweet_chicken.webp" alt="Crispy Sweet Chicken" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Crispy Sweet Chicken</h3>
+                    <span class="bengali-title">ক্রিস্পি সুইট চিকেন</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Crispy%20Sweet%20Chicken%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 60. Chicken Popcorn -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken popcorn crunchy bite">
+                <div class="food-card-badge special">Kids Fav</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_popcorn.webp" alt="Chicken Popcorn" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Popcorn</h3>
+                    <span class="bengali-title">চিকেন পপকর্ন</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Popcorn%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 61. Schezwan Chicken (8 pcs) -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="secsion schezwan chicken 8 pic spicy">
+                <div class="food-card-badge special">Spicy</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_schezwan_chicken.webp" alt="Schezwan Chicken (8 pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Schezwan Chicken (8 pcs)</h3>
+                    <span class="bengali-title">শেজোয়ান চিকেন (৮ পিস)</span>
+                    <span class="food-price">₹160</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Schezwan%20Chicken%20(8%20pcs)%20(%E2%82%B9160)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 62. Chicken Cutlet -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken catlet cutlet evening snack">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_cutlet.webp" alt="Chicken Cutlet" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Cutlet</h3>
+                    <span class="bengali-title">চিকেন কাটলেট</span>
+                    <span class="food-price">₹50</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Cutlet%20(%E2%82%B950)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 63. Chicken Pakora -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="chicken pokora pakoda crispy">
+                <div class="food-card-badge bestseller">Hot Snack</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_pakora.webp" alt="Chicken Pakora" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Pakora</h3>
+                    <span class="bengali-title">চিকেন পকোড়া</span>
+                    <span class="food-price">₹25</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Pakora%20(%E2%82%B925)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 64. French Fries -->
+            <div class="food-menu-card" data-category="snacks" data-keywords="french fry fries potato finger veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_french_fries.webp" alt="French Fries" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">French Fries</h3>
+                    <span class="bengali-title">ফ্রেঞ্চ ফ্রাইস</span>
+                    <span class="food-price">₹70</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20French%20Fries%20(%E2%82%B970)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 65. Chicken Butter Masala -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken butter masala murgh makhani gravy">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_butter_masala.webp" alt="Chicken Butter Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Butter Masala</h3>
+                    <span class="bengali-title">চিকেন বাটার মশলা</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Butter%20Masala%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 66. Chicken Handi -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken handi rich gravy royal">
+                <div class="food-card-badge chef">Chef Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_handi.webp" alt="Chicken Handi" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Handi</h3>
+                    <span class="bengali-title">চিকেন হান্ডি</span>
+                    <span class="food-price">₹200</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Handi%20(%E2%82%B9200)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 67. Chicken Kosha -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken kosha kasha spicy bengali gravy">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_kosha.webp" alt="Chicken Kosha" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Kosha</h3>
+                    <span class="bengali-title">চিকেন কষা</span>
+                    <span class="food-price">₹120</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Kosha%20(%E2%82%B9120)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 68. Mutton Kosha -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="mutton kosha khasi mangsho gravy">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mutton_kosha.webp" alt="Mutton Kosha" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Kosha</h3>
+                    <span class="bengali-title">মটন কষা</span>
+                    <span class="food-price">₹200</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mutton%20Kosha%20(%E2%82%B9200)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 69. Chicken Bharta -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken bharta shredded chicken egg gravy">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_bharta.webp" alt="Chicken Bharta" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Bharta</h3>
+                    <span class="bengali-title">চিকেন ভর্তা</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Bharta%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 70. Chicken Chaap -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken chaap mughlai">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_chaap.webp" alt="Chicken Chaap" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Chaap</h3>
+                    <span class="bengali-title">চিকেন চাপ</span>
+                    <span class="food-price">₹70</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Chaap%20(%E2%82%B970)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 71. Chicken Tikka Masala -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken tikka masala roasted tikka gravy">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_tikka_masala.webp" alt="Chicken Tikka Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Tikka Masala</h3>
+                    <span class="bengali-title">চিকেন টিক্কা মশলা</span>
+                    <span class="food-price">₹160</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Tikka%20Masala%20(%E2%82%B9160)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 72. Chicken Masala -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken masala spicy curry">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_masala.webp" alt="Chicken Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Masala</h3>
+                    <span class="bengali-title">চিকেন মশলা</span>
+                    <span class="food-price">₹160</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Masala%20(%E2%82%B9160)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 73. Chicken Do-Pyaza -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken do-piaza do pyaza onion gravy">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_do_pyaza.webp" alt="Chicken Do-Pyaza" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Do-Pyaza</h3>
+                    <span class="bengali-title">চিকেন দো-পেঁয়াজা</span>
+                    <span class="food-price">₹140</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Do-Pyaza%20(%E2%82%B9140)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 74. Chilli Chicken Dry (8 pcs) -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chilli chicken dry 8pic chinese starter">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chilli_chicken_dry.webp" alt="Chilli Chicken Dry (8 pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Chicken Dry (8 pcs)</h3>
+                    <span class="bengali-title">চিলি চিকেন ড্রাই (৮ পিস)</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chilli%20Chicken%20Dry%20(8%20pcs)%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 75. Chilli Chicken Gravy (6 pcs) -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chilli chicken grovi gravy 6 pic">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chilli_chicken_gravy.webp" alt="Chilli Chicken Gravy (6 pcs)" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Chicken Gravy (6 pcs)</h3>
+                    <span class="bengali-title">চিলি চিকেন গ্রেভি (৬ পিস)</span>
+                    <span class="food-price">₹130</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chilli%20Chicken%20Gravy%20(6%20pcs)%20(%E2%82%B9130)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 76. Chilli Paneer -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chilli paneer chinese veg">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chilli_paneer.webp" alt="Chilli Paneer" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chilli Paneer</h3>
+                    <span class="bengali-title">চিলি পনির</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chilli%20Paneer%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 77. Paneer Butter Masala -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="paneer batter butter masala cottage cheese">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_paneer_butter_masala.webp" alt="Paneer Butter Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Paneer Butter Masala</h3>
+                    <span class="bengali-title">পনির বাটার মশলা</span>
+                    <span class="food-price">₹180</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Paneer%20Butter%20Masala%20(%E2%82%B9180)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 78. Chicken Chana Masala -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken chana masala chole chicken">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_chana_masala.webp" alt="Chicken Chana Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Chana Masala</h3>
+                    <span class="bengali-title">চিকেন চানা মশলা</span>
+                    <span class="food-price">₹120</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Chana%20Masala%20(%E2%82%B9120)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 79. Mutton Chana -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="mutton chana khasi chole">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mutton_chana.webp" alt="Mutton Chana" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Chana</h3>
+                    <span class="bengali-title">মটন চানা</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mutton%20Chana%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 80. Chana Masala -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chana masala chole veg gravy">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chana_masala.webp" alt="Chana Masala" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chana Masala</h3>
+                    <span class="bengali-title">চানা মশলা</span>
+                    <span class="food-price">₹75</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chana%20Masala%20(%E2%82%B975)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 81. Egg Chicken Tarka -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="egg chicken tarka tadka dhabha style">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_egg_chicken_tarka.webp" alt="Egg Chicken Tarka" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Chicken Tarka</h3>
+                    <span class="bengali-title">এগ চিকেন তড়কা</span>
+                    <span class="food-price">₹120</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Egg%20Chicken%20Tarka%20(%E2%82%B9120)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 82. Egg Mutton Tarka -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="egg mutton tarka tadka">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_egg_mutton_tarka.webp" alt="Egg Mutton Tarka" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Mutton Tarka</h3>
+                    <span class="bengali-title">এগ মটন তড়কা</span>
+                    <span class="food-price">₹150</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Egg%20Mutton%20Tarka%20(%E2%82%B9150)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 83. Chicken Tarka -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="chicken tarka tadka dal">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chicken_tarka.webp" alt="Chicken Tarka" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chicken Tarka</h3>
+                    <span class="bengali-title">চিকেন তড়কা</span>
+                    <span class="food-price">₹110</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chicken%20Tarka%20(%E2%82%B9110)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 84. Mutton Tarka -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="mutton tarka tadka">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mutton_tarka.webp" alt="Mutton Tarka" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mutton Tarka</h3>
+                    <span class="bengali-title">মটন তড়কা</span>
+                    <span class="food-price">₹130</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mutton%20Tarka%20(%E2%82%B9130)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 85. Egg Tarka -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="egg tarka dimer tadka">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_egg_tarka.webp" alt="Egg Tarka" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Egg Tarka</h3>
+                    <span class="bengali-title">ডিম তড়কা</span>
+                    <span class="food-price">₹75</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Egg%20Tarka%20(%E2%82%B975)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 86. Veg Tarka -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="veg tarka niramish dal tadka">
+                <div class="food-card-badge pure-veg">Pure Veg</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_veg_tarka.webp" alt="Veg Tarka" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Veg Tarka</h3>
+                    <span class="bengali-title">ভেজ তড়কা</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Veg%20Tarka%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 87. Lachha Paratha -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="lachha poratha paratha flaky roti">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_lachha_paratha.webp" alt="Lachha Paratha" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Lachha Paratha</h3>
+                    <span class="bengali-title">লাচ্ছা পরোটা</span>
+                    <span class="food-price">₹35</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Lachha%20Paratha%20(%E2%82%B935)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 88. Badshahi Paratha -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="badshahi poratha paratha">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_badshahi_paratha.webp" alt="Badshahi Paratha" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Badshahi Paratha</h3>
+                    <span class="bengali-title">বাদশাহী পরোটা</span>
+                    <span class="food-price">₹25</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Badshahi%20Paratha%20(%E2%82%B925)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 89. Roomali Roti -->
+            <div class="food-menu-card" data-category="roti_curry" data-keywords="roomali roti rumali soft roti">
+                <div class="food-card-badge bestseller">Per Pc</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_roomali_roti.webp" alt="Roomali Roti" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Roomali Roti</h3>
+                    <span class="bengali-title">রুমালি রুটি</span>
+                    <span class="food-price">₹6</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Roomali%20Roti%20(%E2%82%B96)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 90. Kit-Kat Cold Coffee -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="kit-kat cold coffee chocolate kitkat">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_kitkat_cold_coffee.webp" alt="Kit-Kat Cold Coffee" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Kit-Kat Cold Coffee</h3>
+                    <span class="bengali-title">কিটক্যাট কোল্ড কফি</span>
+                    <span class="food-price">₹100</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Kit-Kat%20Cold%20Coffee%20(%E2%82%B9100)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 91. Oreo Cold Coffee -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="oreo cold coffee chocolate biscuits">
+                <div class="food-card-badge popular">Popular</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_oreo_cold_coffee.webp" alt="Oreo Cold Coffee" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Oreo Cold Coffee</h3>
+                    <span class="bengali-title">ওরিও কোল্ড কফি</span>
+                    <span class="food-price">₹100</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Oreo%20Cold%20Coffee%20(%E2%82%B9100)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 92. Chocolate Cold Coffee -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="chocolate cold coffee iced coffee">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_chocolate_cold_coffee.webp" alt="Chocolate Cold Coffee" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Chocolate Cold Coffee</h3>
+                    <span class="bengali-title">চকলেট কোল্ড কফি</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Chocolate%20Cold%20Coffee%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 93. Ice-Cream Cold Coffee -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="ice-cream cold coffee vanilla ice cream">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_icecream_cold_coffee.webp" alt="Ice-Cream Cold Coffee" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Ice-Cream Cold Coffee</h3>
+                    <span class="bengali-title">আইসক্রিম কোল্ড কফি</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Ice-Cream%20Cold%20Coffee%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 94. Kesar Badam Lassi -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="kesar badam lassi saffron almond curd">
+                <div class="food-card-badge chef">Royal Drink</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_kesar_badam_lassi.webp" alt="Kesar Badam Lassi" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Kesar Badam Lassi</h3>
+                    <span class="bengali-title">কেশর বাদাম লাচ্ছি</span>
+                    <span class="food-price">₹85</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Kesar%20Badam%20Lassi%20(%E2%82%B985)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 95. Mango Lassi -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="mango lassi aam lassi sweet curd">
+                <div class="food-card-badge special">Summer Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mango_lassi.webp" alt="Mango Lassi" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mango Lassi</h3>
+                    <span class="bengali-title">ম্যাঙ্গো লাচ্ছি</span>
+                    <span class="food-price">₹80</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mango%20Lassi%20(%E2%82%B980)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 96. Plain Lassi -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="lossi lassi sweet plain curd drink">
+                <div class="food-card-badge popular">Refreshing</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_plain_lassi.webp" alt="Plain Lassi" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Plain Lassi</h3>
+                    <span class="bengali-title">প্লেইন লাচ্ছি</span>
+                    <span class="food-price">₹70</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Plain%20Lassi%20(%E2%82%B970)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 97. Blue Lagoon -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="blue lagon lagoon mocktail chilled drink">
+                <div class="food-card-badge bestseller">Bestseller</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_blue_lagoon.webp" alt="Blue Lagoon" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Blue Lagoon</h3>
+                    <span class="bengali-title">ব্লু লাগুন মকটেল</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Blue%20Lagoon%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 98. Kiwi Mojito -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="kiwi majito mojito mint lemon mocktail">
+                <div class="food-card-badge special">Special</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_kiwi_mojito.webp" alt="Kiwi Mojito" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Kiwi Mojito</h3>
+                    <span class="bengali-title">কিউই মোহিতো</span>
+                    <span class="food-price">₹90</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Kiwi%20Mojito%20(%E2%82%B990)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 99. Virgin Mojito -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="virgin majito mojito lime mint soda">
+                <div class="food-card-badge popular">Refreshing</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_virgin_mojito.webp" alt="Virgin Mojito" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Virgin Mojito</h3>
+                    <span class="bengali-title">ভার্জিন মোহিতো</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Virgin%20Mojito%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 100. Mocktail Cold -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="moctail mocktail cold fruit drink">
+                <div class="food-card-badge special">Chilled</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_mocktail_cold.webp" alt="Mocktail Cold" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Mocktail Cold</h3>
+                    <span class="bengali-title">মকটেল কোল্ড</span>
+                    <span class="food-price">₹50</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Mocktail%20Cold%20(%E2%82%B950)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 101. Choco Cappuccino -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="choco cappuccino hot chocolate coffee">
+                <div class="food-card-badge special">Hot Coffee</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_choco_cappuccino.webp" alt="Choco Cappuccino" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Choco Cappuccino</h3>
+                    <span class="bengali-title">চকো ক্যাপুচিনো</span>
+                    <span class="food-price">₹60</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Choco%20Cappuccino%20(%E2%82%B960)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 102. Cappuccino -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="cappuccino hot coffee froth">
+                <div class="food-card-badge popular">Hot Coffee</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_cappuccino.webp" alt="Cappuccino" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Cappuccino</h3>
+                    <span class="bengali-title">ক্যাপুচিনো কফি</span>
+                    <span class="food-price">₹40</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Cappuccino%20(%E2%82%B940)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 103. Cafe Latte -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="cafe latta latte hot milk coffee">
+                <div class="food-card-badge special">Hot Coffee</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_cafe_latte.webp" alt="Cafe Latte" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Cafe Latte</h3>
+                    <span class="bengali-title">ক্যাফে লাতে</span>
+                    <span class="food-price">₹40</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Cafe%20Latte%20(%E2%82%B940)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+            <!-- 104. Espresso -->
+            <div class="food-menu-card" data-category="beverages" data-keywords="espresso strong black coffee shot">
+                <div class="food-card-badge popular">Strong</div>
+                <div class="food-card-img-box">
+                    <img src="assets/item_espresso.webp" alt="Espresso" loading="lazy">
+                </div>
+                <div class="food-card-body">
+                    <h3 class="food-title">Espresso</h3>
+                    <span class="bengali-title">এসপ্রেসো</span>
+                    <span class="food-price">₹30</span>
+                    <a href="https://wa.me/919933425270?text=Hi%20Saha%20Restaurant,%20I%20want%20to%20order%20Espresso%20(%E2%82%B930)" target="_blank" class="food-order-btn">
+                        <i class="fab fa-whatsapp"></i> Order
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Fallback -->
+        <div id="no-results-msg">
+            <i class="fas fa-search" style="font-size: 2.5rem; margin-bottom: 12px; display: block;"></i>
+            <p>আপনার খোঁজা অনুযায়ী কোনো খাবার পাওয়া যায়নি। অন্য কিছু লিখে খুঁজুন।</p>
+        </div>
+    </main>
+
+    <!-- Order Timings Banner -->
+    <div id="order-timings" style="max-width: 1200px; margin: 0 auto 60px; padding: 0 15px; scroll-margin-top: 170px;">
+        <div class="order-info-banner glassmorphism">
+            <div class="order-timing-card">
+                <div class="timing-icon"><i class="fas fa-clock"></i></div>
+                <div class="timing-details">
+                    <h4>⏰ Order Timings (অর্ডার সময়সূচী)</h4>
+                    <ul>
+                        <li><strong>☀️ Lunch:</strong> Any Time You're Hungry!</li>
+                        <li><strong>🌙 Dinner:</strong> Order 05:00 PM – 06:30 PM <span class="serve-time">(Serve: 9:30 PM – 10:00 PM)</span></li>
+                        <li><strong>🌅 Breakfast:</strong> Pre-order 09:00 PM – 10:00 PM <span class="serve-time">(Serve Next Morning: 8:30 AM)</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="order-call-box">
+                <div class="call-badge">Direct Hotline</div>
+                <h3>Call or WhatsApp to Place Order</h3>
+                <a href="tel:919933425270" class="order-phone-link">
+                    <i class="fas fa-phone-volume"></i> 919933425270
+                </a>
+                <div class="quick-action-btns">
+                    <a href="tel:919933425270" class="direct-call-btn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/919933425270?text==Hello%20Saha%20Restaurant,%20I%20want%20to%20place%20an%20order!" target="_blank" class="direct-wp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Order
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Direct WhatsApp Button -->
+    <a href="https://wa.me/919933425270?text==Hello%20Saha%20Restaurant,%20I%20want%20to%20order%20food!" target="_blank" class="floating-order-btn" title="Direct WhatsApp Order">
+        <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> <span>Order on WhatsApp</span>
+    </a>
+
+    <!-- JavaScript for Live Search & Category Filtering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('menu-search-input');
+            const categoryTabs = document.querySelectorAll('.menu-tab-btn');
+            const foodCards = document.querySelectorAll('.food-menu-card');
+            const noResultsMsg = document.getElementById('no-results-msg');
+
+            let activeCategory = 'all';
+
+            function filterMenu() {
+                const query = searchInput.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                foodCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const keywords = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText.toLowerCase();
+
+                    const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+                    const matchesSearch = query === '' || keywords.includes(query);
+
+                    if (matchesCategory && matchesSearch) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                if (visibleCount === 0) {
+                    noResultsMsg.style.display = 'block';
+                } else {
+                    noResultsMsg.style.display = 'none';
+                }
+            }
+
+            // Category Tab Clicks
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    activeCategory = tab.getAttribute('data-category');
+                    const tabsContainer = tab.closest('.menu-category-tabs');
+                    if (tabsContainer) {
+                        const targetScroll = tab.offsetLeft - (tabsContainer.clientWidth / 2) + (tab.offsetWidth / 2);
+                        tabsContainer.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                    }
+                    filterMenu();
+                });
+            });
+
+            // Search Input Live Filter
+            searchInput.addEventListener('input', () => {
+                filterMenu();
+            });
+
+            // ============================================================
+            // TWO-WAY TOGGLE SCROLL (Click to go to Timings, Click again to go to Top)
+            // ============================================================
+            const timingToggleBtn = document.getElementById('nav-timing-toggle-btn');
+            const timingIcon = document.getElementById('nav-timing-icon');
+            const timingText = document.getElementById('nav-timing-text');
+            const orderTimingsSection = document.getElementById('order-timings');
+
+            function isNearTimingsSection() {
+                if (!orderTimingsSection) return false;
+                const rect = orderTimingsSection.getBoundingClientRect();
+                return rect.top <= window.innerHeight * 0.75;
+            }
+
+            if (timingToggleBtn && orderTimingsSection) {
+                timingToggleBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (isNearTimingsSection()) {
+                        // If already at Timings section -> Smoothly scroll back to TOP
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        // Smoothly scroll DOWN to Order Timings section
+                        orderTimingsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+
+                // Dynamically update button icon/text when user scrolls near timings
+                window.addEventListener('scroll', () => {
+                    if (isNearTimingsSection()) {
+                        timingToggleBtn.classList.add('at-bottom');
+                        if (timingIcon) timingIcon.className = 'fas fa-arrow-up';
+                        if (timingText) timingText.innerText = 'Top';
+                        timingToggleBtn.title = 'Scroll back to Top (উপরে ফিরে যান)';
+                    } else {
+                        timingToggleBtn.classList.remove('at-bottom');
+                        if (timingIcon) timingIcon.className = 'fas fa-clock';
+                        if (timingText) timingText.innerText = 'Timings';
+                        timingToggleBtn.title = 'Order Timings (অর্ডার সময়সূচী)';
+                    }
+                }, { passive: true });
+            }
+        });
+    </script>
+</body>
+</html>
